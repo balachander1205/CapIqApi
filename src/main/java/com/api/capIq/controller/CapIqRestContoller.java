@@ -4,6 +4,7 @@ import javax.xml.ws.Response;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,7 +17,7 @@ import com.google.gson.Gson;
 @RestController
 public class CapIqRestContoller {
 
-	@PostMapping
+	@PostMapping(value = "/getCapIqResponse", produces = MediaType.APPLICATION_JSON_VALUE)
 	public String getCapiqResponse(@RequestBody CapIqBuyerModel buyerModel) {
 
 		JSONObject capIqRequest = new JSONObject();
